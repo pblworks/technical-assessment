@@ -12,7 +12,9 @@ than whether you can spot a syntax error.
 PBLWorks customers are **organizations** — typically school districts.
 An organization can have **child organizations** under it, which we call
 **sites** (think: individual schools within a district). Subscriptions
-can live on either the parent or on individual child sites.
+always live on a site, never on the parent directly. When a parent
+organization needs its own subscription, we create a site under it with
+the same name as the parent and attach the subscription there.
 
 When a teacher registers under a parent organization's link, we need to
 figure out which site they belong to:
