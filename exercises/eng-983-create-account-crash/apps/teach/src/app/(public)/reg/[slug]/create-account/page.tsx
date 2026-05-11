@@ -4,7 +4,7 @@ import { redirect } from 'next/navigation'
 import { getSession } from 'auth'
 import { CenteredLayout } from '@/components/CenteredLayout'
 import { RegistrationProgress } from '@/components/RegistrationProgress'
-import { getAvailableSites, determineSiteSelectionNeeded } from './sites'
+import { getAvailableSites } from './sites'
 import { HandleCreateAccount } from './HandleCreateAccount'
 
 async function Page({ params }: { params: Promise<{ slug: string }> }) {
@@ -21,8 +21,7 @@ async function Page({ params }: { params: Promise<{ slug: string }> }) {
     parentOrg.originalId
   )
   const availableSites = getAvailableSites(childrenWithSubs)
-  const selectionResult = determineSiteSelectionNeeded(availableSites)
-  const showSiteStep = selectionResult.type === 'needs_selection'
+  const showSiteStep = availableSites.length > 1
 
   return (
     <CenteredLayout
