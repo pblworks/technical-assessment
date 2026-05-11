@@ -39,8 +39,6 @@ The model needs to express things like:
 - _Beta Publishing's authors must not see Acme's drafts._
 - _A PBLWorks support engineer can view any publisher's data to help
   debug._
-- _A teacher at District X can use projects from any publisher District
-  X has licensed._
 
 Walk us through:
 
